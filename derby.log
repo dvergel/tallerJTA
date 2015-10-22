@@ -16,3 +16,16 @@ Cargador de clases de base de datos iniciado - derby.database.classpath=''
 Wed Oct 21 19:32:47 COT 2015:
 Cerrando la instancia a816c00e-0150-8cf6-5550-00002ceed5db en el directorio de base de datos H:\laboratorio5\Lab3-MueblesDeLosAlpes\LosAlpesDerby con cargador de clases sun.misc.Launcher$AppClassLoader@71b98cbb
 Wed Oct 21 19:32:47 COT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {2}), Conclusión de la base de datos 'LosAlpesDerby'.
+----------------------------------------------------------------
+Wed Oct 21 20:47:52 COT 2015:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.3.2 - (1557835): instancia 6c44409f-0150-8cf6-5550-00002ceed5db 
+en el directorio de base de datos H:\laboratorio5\Lab3-MueblesDeLosAlpes\LosAlpesDerby  con el cargador de clases sun.misc.Launcher$AppClassLoader@71b98cbb
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_71-b14
+user.dir=C:\Program Files\Java\jdk1.7.0_71\db
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=H:\laboratorio5\Lab3-MueblesDeLosAlpes
+Cargador de clases de base de datos iniciado - derby.database.classpath=''

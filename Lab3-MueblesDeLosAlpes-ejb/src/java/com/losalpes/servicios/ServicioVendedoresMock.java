@@ -34,6 +34,8 @@ public class ServicioVendedoresMock implements IServicioVendedoresMockRemote, IS
      */
     @EJB
     private IServicioPersistenciaMockLocal persistencia;
+    @EJB
+    private PersistenciaCMT derby;
 
     //-----------------------------------------------------------
     // Constructor
@@ -61,9 +63,13 @@ public class ServicioVendedoresMock implements IServicioVendedoresMockRemote, IS
         try
         {
             persistencia.create(vendedor);
+            derby.insertRemoteDatabase(derby.classCast(vendedor));
         }
         catch (OperacionInvalidaException ex)
         {
+            throw new OperacionInvalidaException(ex.getMessage());
+        }
+        catch(Exception ex){
             throw new OperacionInvalidaException(ex.getMessage());
         }
     }
