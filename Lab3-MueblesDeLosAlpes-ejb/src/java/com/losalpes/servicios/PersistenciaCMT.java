@@ -5,8 +5,12 @@
  */
 package com.losalpes.servicios;
 
+import com.losalpes.entities.Mueble;
+import com.losalpes.entities.TarjetaCreditoAlpes;
+import com.losalpes.entities.Usuario;
 import com.losalpes.entities.Vendedor;
 import com.losalpes.entities.Vendedores;
+import com.losalpes.excepciones.CupoInsuficienteException;
 import com.losalpes.excepciones.OperacionInvalidaException;
 import java.io.Serializable;
 import java.util.List;
@@ -119,5 +123,29 @@ public class PersistenciaCMT implements IServicioPersistenciaDerbyMockLocal,ISer
 
      return derby.find(c, id);
     
+    }
+    
+    
+    public void comprar(List<Mueble> muebles, Usuario usuario, 
+            TarjetaCreditoAlpes tarjetaCreditoAlpes) throws CupoInsuficienteException{
+        double cupo = tarjetaCreditoAlpes.getCupo();
+        double total = totalizar(muebles);
+        
+        if (cupo - total < 0) {
+            throw  new CupoInsuficienteException("Cupo insuficiente para la compra");
+        }
+        
+        tarjetaCreditoAlpes.setCupo(cupo - total);
+        
+        derby.merge(tarjetaCreditoAlpes);
+        
+    }
+    
+     private double totalizar(List<Mueble> muebles) {
+        double total = 0.0;
+        for (Mueble mueble: muebles) {
+            total += mueble.getPrecio();
+        }
+        return total;
     }
 }
