@@ -87,11 +87,17 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal,ISer
      * @param c Clase cuyos objetos quieren encontrarse en el sistema.
      * @return list Listado de todos los objetos de una clase dada que se encuentran en el sistema.
      */
-    @Override
+    /*@Override
     public List findAll(Class c)
     {
 
         return entity.createQuery("select O from " + c.getSimpleName() + " as O").getResultList();
+    }*/
+    @Override
+    public List findAll(Class c) {
+        javax.persistence.criteria.CriteriaQuery cq = entity.getCriteriaBuilder().createQuery();
+        cq.select(cq.from(c));
+        return entity.createQuery(cq).getResultList();
     }
 
     /**

@@ -14,7 +14,6 @@ package com.losalpes.servicios;
 
 import com.losalpes.entities.Usuario;
 import com.losalpes.excepciones.OperacionInvalidaException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -103,7 +102,7 @@ public class ServicioRegistroMock implements IServicioRegistroMockRemote, IServi
     @Override
     public List<Usuario> darClientes()
     {
-        return(ArrayList<Usuario>) persistencia.findAll(Usuario.class);
+        return(List<Usuario>) persistencia.findAll(Usuario.class);
     }
 
 }
