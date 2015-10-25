@@ -5,7 +5,7 @@
  * Departamento de Ingeniería de Sistemas y Computación
  * Licenciado bajo el esquema Academic Free License version 3.0
  *
- * Ejercicio: Muebles de los Alpes
+ * Ejercicio: Muebles de los Alpes d
  * 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
