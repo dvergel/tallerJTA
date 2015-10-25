@@ -1,7 +1,7 @@
-Sat Oct 24 20:41:49 COT 2015 : Servidor de red Apache Derby: Se ha iniciado 10.12.1.1 - (1704137) y está listo para aceptar las conexiones en el puerto 1527
+Sat Oct 24 21:46:00 COT 2015 : Servidor de red Apache Derby: Se ha iniciado 10.12.1.1 - (1704137) y está listo para aceptar las conexiones en el puerto 1527
 ----------------------------------------------------------------
-Sat Oct 24 20:41:50 COT 2015:
- Iniciando instancia a816c00e-0150-9ca8-a59b-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
+Sat Oct 24 21:46:00 COT 2015:
+ Iniciando instancia a816c00e-0150-9ce3-6777-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
 en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\LosAlpesDerby con el cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
 Cargado desde file:/C:/Users/Dev/Desktop/db-derby-10.12.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -13,8 +13,8 @@ os.version=6.1
 derby.system.home=C:\Users\Dev\Documents\NetBeansProjects\tallerJTA
 Cargador de clases de base de datos iniciado - derby.database.classpath=''
 ----------------------------------------------------------------
-Sat Oct 24 20:42:18 COT 2015:
- Iniciando instancia 6074401f-0150-9ca8-a59b-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
+Sat Oct 24 21:46:27 COT 2015:
+ Iniciando instancia e0b94027-0150-9ce3-6777-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
 en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\sun-appserv-samples con el cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
 Cargado desde file:/C:/Users/Dev/Desktop/db-derby-10.12.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation

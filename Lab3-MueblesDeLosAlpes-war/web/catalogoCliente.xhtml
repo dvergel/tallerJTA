@@ -8,11 +8,12 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:param name="titulo" value="Catálogo de muebles" />
     <ui:define name="body">
-       
+
         <script type="text/javascript">
             function handleDrop(event, ui) {
                 var droppedMueble = ui.draggable;
@@ -111,6 +112,74 @@
                 </h:panelGroup>
                 <br></br>
                 <p:separator/>
+
+                <p:fieldset id="formularioPagofield" legend="Medios de Pago" style="margin-top:20px">
+                    <h:form id="formularioPago">
+                        <h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+
+
+                            <p:outputLabel value="Nombre tarjeta habitante"
+                                           for="nombreCliente"/>
+                            <p:inputText id="nombreCliente" 
+                                         value="#{carritoBean.tarjeta.nombreTitutlar}"
+                                         required="true"
+                                         requiredMessage="El nombre es obligatorio"/>
+                            <h:message for="nombreCliente" class="error"/>
+
+                            <p:outputLabel value="Nombre Banco"
+                                           for="nombreBanco"/>
+                            <p:inputText id="nombreBanco" 
+                                         value="#{carritoBean.tarjeta.nombreBanco}"
+                                         required="true"
+                                         requiredMessage="El nombre del banco es obligatorio"/>
+                            <h:message for="nombreBanco" class="error"/>
+
+                            <p:outputLabel value="Número de la tarjeta"
+                                           for="numeroTarjeta"/>
+                            <p:inputMask id="numeroTarjeta" 
+                                         value="#{carritoBean.tarjeta.identificacion}"
+                                         mask="9999-9999-9999-9999"
+                                         required="true"
+                                         requiredMessage="Número de tarjeta requerido"/>
+                            <h:message for="numeroTarjeta" class="error"/>
+
+                            <p:outputLabel value="Fecha de vencimiento" 
+                                           for="vencimientoTarjeta"/>
+                            <p:inputMask id="vencimientoTarjeta" 
+                                         value="#{carritoBean.tarjeta.fechaVencimiento}"
+                                         placeholder="MM/AAAA"
+                                         mask="99/9999"
+                                         required="true"
+                                         requiredMessage="Fecha de tarjeta requerida"/>
+                            <h:message for="vencimientoTarjeta" class="error"/>
+
+                            <p:outputLabel value="Fecha de Expedicion" 
+                                           for="expedicionTarjeta"/>
+                            <p:inputMask id="expedicionTarjeta" 
+                                         value="#{carritoBean.tarjeta.fechaExpedicion}"
+                                         placeholder="MM/AAAA"
+                                         mask="99/9999"
+                                         required="true"
+                                         requiredMessage="Fecha expedicion de tarjeta requerida"/>
+                            <h:message for="expedicionTarjeta" class="error"/>
+
+                            <p:outputLabel value="Monto"
+                                           for="montoTarjeta"/>
+
+                            <p:inputText id="montoTarjeta" required="true" size="40"
+                                         requiredMessage="Monto requerido"
+                                         validatorMessage="Invalid format"
+                                         value="#{carritoBean.tarjeta.cupo}">
+
+                                <f:validateRegex
+                                    pattern="/d*" />
+
+                            </p:inputText>
+                            <h:message for="montoTarjeta" class="error"/> 
+                        </h:panelGrid>
+
+                    </h:form>
+                </p:fieldset>
                 <h:panelGroup style="background-color: white">
                     <h:commandButton value="Comprar" action="#{carritoBean.comprar}"/>
                 </h:panelGroup>
@@ -159,6 +228,34 @@
                         </p:dataTable>
                     </p:fieldset>    
                 </h:panelGroup>    
+            </h:form>
+
+            <!-- Formulario para realizar un registro -->
+            <h:form>
+                <p:dialog visible="#{carritoBean.mostrarVentana}" header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+
+                    <f:facet name="header">
+                        <h:outputText value="Error de ingreso"/>
+                    </f:facet>
+                    <h:panelGroup>
+
+                        <h:panelGrid cellpadding="0" columns="2" style="background-position: center"
+                                     cellspacing="10" styleClass="popupModalBody">
+                            <h:graphicImage url="./resources/img/graphics/error.png"/>
+                            <h:outputText
+                                value="#{carritoBean.mensaje}"/>
+                        </h:panelGrid>
+                        <h:panelGroup style="vertical-align: middle;background: transparent">
+
+                            <div align="center">
+                                <h:commandButton id="closeModal"
+                                                 actionListener="#{carritoBean.cerrarVentana}"
+                                                 value="Cerrar" style="z-index:2;"/>
+                            </div>
+                        </h:panelGroup>
+                    </h:panelGroup>
+
+                </p:dialog>       
             </h:form>
         </h:panelGroup>
     </ui:define>

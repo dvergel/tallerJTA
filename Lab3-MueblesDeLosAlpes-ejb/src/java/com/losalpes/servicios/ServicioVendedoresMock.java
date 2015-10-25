@@ -35,7 +35,7 @@ public class ServicioVendedoresMock implements IServicioVendedoresMockRemote, IS
     @EJB
     private IServicioPersistenciaMockLocal persistencia;
     @EJB
-    private PersistenciaCMT derby;
+    private IServicioPersistenciaDerbyMockLocal derby;
 
     //-----------------------------------------------------------
     // Constructor
