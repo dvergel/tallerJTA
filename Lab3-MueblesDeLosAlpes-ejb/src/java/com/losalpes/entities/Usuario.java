@@ -13,6 +13,7 @@ package com.losalpes.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -81,7 +82,7 @@ public class Usuario implements Serializable
     /**
      * Ciudad de residencia del usuario
      */
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="FK_CIUDAD")
     private Ciudad ciudad;
 
@@ -112,7 +113,7 @@ public class Usuario implements Serializable
     /**
      * Devuelve un lista con todos las compras del usuario
      */
-    @OneToMany(mappedBy="comprador")
+    @OneToMany(mappedBy="comprador",cascade = CascadeType.ALL)
     private List<RegistroVenta>compras;
 
     //-----------------------------------------------------------

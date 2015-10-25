@@ -25,7 +25,7 @@ public class PersistenciaCMT {
     
     
     public void insertRemoteDatabase(Vendedores vendedor) throws Exception,RuntimeException{
-        Vendedor exist=derby.find(Vendedor.class, vendedor.getIdentificacion());
+        Vendedores exist=derby.find(Vendedores.class, vendedor.getIdentificacion());
         if(exist!=null){
             derby.persist(vendedor);
         }else{

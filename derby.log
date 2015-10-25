@@ -1,31 +1,219 @@
-Wed Oct 21 19:32:45 COT 2015 : Apache Derby Network Server - 10.8.3.2 - (1557835) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
+Sat Oct 24 18:29:58 COT 2015 : Servidor de red Apache Derby: Se ha iniciado 10.12.1.1 - (1704137) y está listo para aceptar las conexiones en el puerto 1527
+Sat Oct 24 18:30:21 COT 2015 Thread[DRDAConnThread_2,5,main] Cleanup action starting
+java.sql.SQLException: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: ERROR XJ004: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 21 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Sat Oct 24 18:30:21 COT 2015 Thread[DRDAConnThread_2,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {1}), No se ha encontrado la base de datos 'LosAlpesDerby'.
+Sat Oct 24 18:30:31 COT 2015 Thread[DRDAConnThread_2,5,main] Cleanup action starting
+java.sql.SQLException: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: ERROR XJ004: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 21 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: No se ha encontrado la base de datos 'LosAlpesDerby'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Sat Oct 24 18:30:31 COT 2015 Thread[DRDAConnThread_2,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {2}), No se ha encontrado la base de datos 'LosAlpesDerby'.
 ----------------------------------------------------------------
-Wed Oct 21 19:32:45 COT 2015:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.3.2 - (1557835): instancia a816c00e-0150-8cf6-5550-00002ceed5db 
-en el directorio de base de datos H:\laboratorio5\Lab3-MueblesDeLosAlpes\LosAlpesDerby  con el cargador de clases sun.misc.Launcher$AppClassLoader@71b98cbb
-
+Sat Oct 24 18:30:59 COT 2015:
+ Iniciando instancia a816c00e-0150-9c2f-ed7d-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
+en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\LosAlpesDerby con el cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
+Cargado desde file:/C:/Users/Dev/Desktop/db-derby-10.12.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_71-b14
-user.dir=C:\Program Files\Java\jdk1.7.0_71\db
+java.runtime.version=1.7.0_79-b15
+user.dir=C:\Users\Dev\Desktop\db-derby-10.12.1.1-bin
 os.name=Windows 7
-os.arch=amd64
+os.arch=x86
 os.version=6.1
-derby.system.home=H:\laboratorio5\Lab3-MueblesDeLosAlpes
+derby.system.home=C:\Users\Dev\Documents\NetBeansProjects\tallerJTA
 Cargador de clases de base de datos iniciado - derby.database.classpath=''
 ----------------------------------------------------------------
-Wed Oct 21 19:32:47 COT 2015:
-Cerrando la instancia a816c00e-0150-8cf6-5550-00002ceed5db en el directorio de base de datos H:\laboratorio5\Lab3-MueblesDeLosAlpes\LosAlpesDerby con cargador de clases sun.misc.Launcher$AppClassLoader@71b98cbb
-Wed Oct 21 19:32:47 COT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {2}), Conclusión de la base de datos 'LosAlpesDerby'.
+Sat Oct 24 18:31:01 COT 2015:
+Cerrando la instancia a816c00e-0150-9c2f-ed7d-00005f90f9c5 en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\LosAlpesDerby con cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
+Sat Oct 24 18:31:01 COT 2015 Thread[DRDAConnThread_2,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {4}), Cierre de la base de datos 'LosAlpesDerby'.
 ----------------------------------------------------------------
-Wed Oct 21 20:47:52 COT 2015:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.3.2 - (1557835): instancia 6c44409f-0150-8cf6-5550-00002ceed5db 
-en el directorio de base de datos H:\laboratorio5\Lab3-MueblesDeLosAlpes\LosAlpesDerby  con el cargador de clases sun.misc.Launcher$AppClassLoader@71b98cbb
-
+Sat Oct 24 18:31:03 COT 2015:
+ Iniciando instancia b6b2c0ae-0150-9c2f-ed7d-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
+en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\LosAlpesDerby con el cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
+Cargado desde file:/C:/Users/Dev/Desktop/db-derby-10.12.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_71-b14
-user.dir=C:\Program Files\Java\jdk1.7.0_71\db
+java.runtime.version=1.7.0_79-b15
+user.dir=C:\Users\Dev\Desktop\db-derby-10.12.1.1-bin
 os.name=Windows 7
-os.arch=amd64
+os.arch=x86
 os.version=6.1
-derby.system.home=H:\laboratorio5\Lab3-MueblesDeLosAlpes
+derby.system.home=C:\Users\Dev\Documents\NetBeansProjects\tallerJTA
 Cargador de clases de base de datos iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Oct 24 18:34:47 COT 2015:
+ Iniciando instancia 5bd340ca-0150-9c2f-ed7d-00005f90f9c5 de Derby, versión The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): 
+en el directorio de base de datos C:\Users\Dev\Documents\NetBeansProjects\tallerJTA\sun-appserv-samples con el cargador de clases sun.misc.Launcher$AppClassLoader@15d56d5
+Cargado desde file:/C:/Users/Dev/Desktop/db-derby-10.12.1.1-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=C:\Users\Dev\Desktop\db-derby-10.12.1.1-bin
+os.name=Windows 7
+os.arch=x86
+os.version=6.1
+derby.system.home=C:\Users\Dev\Documents\NetBeansProjects\tallerJTA
+Cargador de clases de base de datos iniciado - derby.database.classpath=''
+Sat Oct 24 18:38:48 COT 2015 Thread[DRDAConnThread_11,5,main] (XID = 234), (SESSIONID = 2), (DATABASE = LosAlpesDerby), (DRDAID = {14}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Se ha producido un fallo de autenticación de conexión. Motivo: Autenticación no válida..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.BasicEmbeddedDataSource40.getConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbedPooledConnection.openRealConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbedPooledConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.EmbedXAConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewXAConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedXADataSource.createXAConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedXADataSource.getXAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.XADatabase.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: ERROR 08004: Se ha producido un fallo de autenticación de conexión. Motivo: Autenticación no válida..
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 26 more
+============= begin nested exception, level (1) ===========
+ERROR 08004: Se ha producido un fallo de autenticación de conexión. Motivo: Autenticación no válida..
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.BasicEmbeddedDataSource40.getConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbedPooledConnection.openRealConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbedPooledConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.EmbedXAConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewXAConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedXADataSource.createXAConnection(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedXADataSource.getXAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.XADatabase.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Sat Oct 24 18:38:48 COT 2015 Thread[DRDAConnThread_11,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {14}), Se ha producido un fallo de autenticación de conexión. Motivo: Autenticación no válida..

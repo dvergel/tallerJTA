@@ -11,6 +11,7 @@
 package com.losalpes.entities;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -34,7 +35,7 @@ public class Pais
     /**
      * Ciudades que tiene el país
      */
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Ciudad> ciudades;
 
     //-----------------------------------------------------------

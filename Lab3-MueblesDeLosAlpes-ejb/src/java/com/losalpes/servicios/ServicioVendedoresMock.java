@@ -86,8 +86,12 @@ public class ServicioVendedoresMock implements IServicioVendedoresMockRemote, IS
         try
         {
             persistencia.delete(v);
+            derby.deleteRemoteDatabase(derby.classCast(v));
         } catch (OperacionInvalidaException ex)
         {
+            throw new OperacionInvalidaException(ex.getMessage());
+        }
+        catch(Exception ex){
             throw new OperacionInvalidaException(ex.getMessage());
         }
     }

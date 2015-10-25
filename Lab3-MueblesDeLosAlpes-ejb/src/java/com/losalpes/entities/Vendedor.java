@@ -12,6 +12,7 @@ package com.losalpes.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,7 +53,7 @@ public class Vendedor
     /**
      * Lista de ítems de experiencia del vendedor.
      */
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ExperienciaVendedor> experiencia;
 
     /**
