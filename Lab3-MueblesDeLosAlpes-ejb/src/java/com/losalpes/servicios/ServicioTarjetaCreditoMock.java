@@ -93,7 +93,7 @@ public class ServicioTarjetaCreditoMock implements IServicioTarjetaCreditoMockLo
         } else {
             tarjeta.setCupo(tarjeta.getCupo() - totalCompra);
             try {
-                persistencia.create(tarjeta);
+                persistencia.update(tarjeta);
             } catch (Exception ex) {
                 throw new CupoInsuficienteException(ex.getMessage());
             }

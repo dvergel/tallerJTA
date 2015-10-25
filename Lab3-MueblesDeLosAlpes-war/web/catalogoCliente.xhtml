@@ -19,6 +19,11 @@
                 var droppedMueble = ui.draggable;
                 droppedMueble.fadeOut('fast');
             }
+            function validaInt(d) {
+                d.value = d.value.replace(' ', '');
+                if (isNaN(d.value))
+                    d.value = d.value.substr(0, d.value.length - 1);
+            }
         </script>
         <h:panelGroup>
 
@@ -114,71 +119,58 @@
                 <p:separator/>
 
                 <p:fieldset id="formularioPagofield" legend="Medios de Pago" style="margin-top:20px">
-                    <h:form id="formularioPago">
-                        <h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+                    <h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
 
 
-                            <p:outputLabel value="Nombre tarjeta habitante"
-                                           for="nombreCliente"/>
-                            <p:inputText id="nombreCliente" 
-                                         value="#{carritoBean.tarjeta.nombreTitutlar}"
-                                         required="true"
-                                         requiredMessage="El nombre es obligatorio"/>
-                            <h:message for="nombreCliente" class="error"/>
+                        <p:outputLabel value="Nombre tarjeta habitante"
+                                       for="nombreCliente"/>
+                        <p:inputText id="nombreCliente" 
+                                     value="#{carritoBean.tarjeta.nombreTitutlar}"
+                                     required="true"
+                                     requiredMessage="El nombre es obligatorio"/>
+                        <h:message for="nombreCliente" class="error"/>
 
-                            <p:outputLabel value="Nombre Banco"
-                                           for="nombreBanco"/>
-                            <p:inputText id="nombreBanco" 
-                                         value="#{carritoBean.tarjeta.nombreBanco}"
-                                         required="true"
-                                         requiredMessage="El nombre del banco es obligatorio"/>
-                            <h:message for="nombreBanco" class="error"/>
+                        <p:outputLabel value="Nombre Banco"
+                                       for="nombreBanco"/>
+                        <p:inputText id="nombreBanco" 
+                                     value="#{carritoBean.tarjeta.nombreBanco}"
+                                     required="true"
+                                     requiredMessage="El nombre del banco es obligatorio"/>
+                        <h:message for="nombreBanco" class="error"/>
 
-                            <p:outputLabel value="Número de la tarjeta"
-                                           for="numeroTarjeta"/>
-                            <p:inputMask id="numeroTarjeta" 
-                                         value="#{carritoBean.tarjeta.identificacion}"
-                                         mask="9999-9999-9999-9999"
-                                         required="true"
-                                         requiredMessage="Número de tarjeta requerido"/>
-                            <h:message for="numeroTarjeta" class="error"/>
+                        <p:outputLabel value="Número de la tarjeta"
+                                       for="numeroTarjeta"/>
+                        <p:inputMask id="numeroTarjeta" 
+                                     value="#{carritoBean.tarjeta.identificacion}"
+                                     mask="9999-9999-9999-9999"
+                                     required="true"
+                                     requiredMessage="Número de tarjeta requerido"/>
+                        <h:message for="numeroTarjeta" class="error"/>
 
-                            <p:outputLabel value="Fecha de vencimiento" 
-                                           for="vencimientoTarjeta"/>
-                            <p:inputMask id="vencimientoTarjeta" 
-                                         value="#{carritoBean.tarjeta.fechaVencimiento}"
-                                         placeholder="MM/AAAA"
-                                         mask="99/9999"
-                                         required="true"
-                                         requiredMessage="Fecha de tarjeta requerida"/>
-                            <h:message for="vencimientoTarjeta" class="error"/>
 
-                            <p:outputLabel value="Fecha de Expedicion" 
-                                           for="expedicionTarjeta"/>
-                            <p:inputMask id="expedicionTarjeta" 
-                                         value="#{carritoBean.tarjeta.fechaExpedicion}"
-                                         placeholder="MM/AAAA"
-                                         mask="99/9999"
-                                         required="true"
-                                         requiredMessage="Fecha expedicion de tarjeta requerida"/>
-                            <h:message for="expedicionTarjeta" class="error"/>
+                        <p:outputLabel for="fechaVencimiento" value="Fecha Vencimiento"/>
+                        <p:calendar value="#{carritoBean.tarjeta.fechaVencimiento}" id="fechaVencimiento" required="true"
+                                    requiredMessage="Fecha vencimiento de tarjeta requerida">
+                            <f:convertDateTime pattern="dd/MM/yy">
+                            </f:convertDateTime>
+                        </p:calendar>
+                        <p:message for="fechaVencimiento" /> 
 
-                            <p:outputLabel value="Monto"
-                                           for="montoTarjeta"/>
+                        <p:outputLabel for="fechaexpedicion" value="Fecha Vencimiento"/>
+                        <p:calendar value="#{carritoBean.tarjeta.fechaExpedicion}" id="fechaexpedicion" required="true"
+                                    requiredMessage="Fecha expedicion de tarjeta requerida">
+                            <f:convertDateTime pattern="dd/MM/yy">
+                            </f:convertDateTime>
+                        </p:calendar>
+                        <p:message for="fechaexpedicion" /> 
 
-                            <p:inputText id="montoTarjeta" required="true" size="40"
-                                         requiredMessage="Monto requerido"
-                                         validatorMessage="Invalid format"
-                                         value="#{carritoBean.tarjeta.cupo}">
-
-                                <f:validateRegex
-                                    pattern="/d*" />
-
-                            </p:inputText>
-                            <h:message for="montoTarjeta" class="error"/> 
-                        </h:panelGrid>
-
-                    </h:form>
+                        <p:outputLabel for="monto" value="Cupo Tarjeta"/>
+                        <p:inputText onkeyup="validaInt(this)" id="monto" label="monto" value="#{carritoBean.tarjeta.cupo}" required="true" validatorMessage="Formato numerico invalido">
+                            <f:validateDoubleRange minimum="0" />
+                        </p:inputText>
+                        <p:message for="monto"/>
+                        
+                    </h:panelGrid>
                 </p:fieldset>
                 <h:panelGroup style="background-color: white">
                     <h:commandButton value="Comprar" action="#{carritoBean.comprar}"/>

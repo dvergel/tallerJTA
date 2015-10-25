@@ -35,7 +35,7 @@ public class CarritoBean implements Serializable {
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
-    private TarjetaCreditoAlpes tarjeta;
+    private TarjetaCreditoAlpes tarjeta=new TarjetaCreditoAlpes();
     /**
      * Relación con la interfaz que provee los servicios necesarios del carrito
      * de compras
