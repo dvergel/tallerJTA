@@ -13,11 +13,10 @@ package com.losalpes.beans;
 import com.losalpes.entities.Mueble;
 import com.losalpes.entities.TarjetaCreditoAlpes;
 import com.losalpes.entities.Usuario;
-import com.losalpes.excepciones.CupoInsuficienteException;
 import com.losalpes.servicios.IServicioCarritoMockLocal;
 import com.losalpes.servicios.IServicioCatalogoMockLocal;
+import com.losalpes.servicios.IServicioTarjetaCreditoMockLocal;
 import com.losalpes.servicios.ServicioCarritoMock;
-import com.losalpes.servicios.ServicioTarjetaCreditoMock;
 
 import java.io.Serializable;
 import java.util.List;
@@ -52,7 +51,7 @@ public class CarritoBean implements Serializable {
     private IServicioCatalogoMockLocal catalogo;
 
     @EJB
-    private ServicioTarjetaCreditoMock tarjetaAlpes;
+    private IServicioTarjetaCreditoMockLocal tarjetaAlpes;
 
     /**
      * Mensaje utilizado para mostrar información importante al usuario.
