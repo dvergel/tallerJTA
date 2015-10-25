@@ -1,42 +1,32 @@
-/**
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * $Id$ ServicioVendedoresMockTest.java
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación
- * Licenciado bajo el esquema Academic Free License version 3.0
- *
- * Ejercicio: Muebles de los Alpes d
- * 
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-
 package com.losalpes.servicios;
 
-import javax.naming.InitialContext;
-import java.util.Properties;
 import com.losalpes.entities.Vendedor;
+import com.losalpes.excepciones.OperacionInvalidaException;
+import java.util.Properties;
+import javax.naming.InitialContext;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Clase encargada de realizar pruebas unitarias
- * 
+ *
+ * @author Administrador
  */
-public class ServicioVendedoresMockTest
-{
-    //-----------------------------------------------------------
-    // Atributos
-    //-----------------------------------------------------------
 
+
+public class PersistenciaCMTMockTest {
+    
     /**
      * Interface con referencia al servicio de vendedores en el sistema
      */
     private IServicioVendedoresMockRemote servicio;
-
-    //-----------------------------------------------------------
-    // Métodos de inicialización y terminación
-    //-----------------------------------------------------------
-
+    
     /**
      * Método que se ejecuta antes de comenzar la prueba unitaria
      * Se encarga de inicializar todo lo necesario para la prueba
@@ -59,28 +49,39 @@ public class ServicioVendedoresMockTest
             throw new Exception(e.getMessage());
         }
     }
-
-    //-----------------------------------------------------------
-    // Métodos de prueba
-    //-----------------------------------------------------------
     
     /**
-     * Método de prueba para agregar un vendedor al sistema
+     * Método de prueba para agregar un vendedor al sistema 
      */
-    @Test
+    @Test(expected=OperacionInvalidaException.class)
     public void testAgregarVendedor() throws Exception
     {
+        boolean thrown = false;
         Vendedor vendedor = null;
-        servicio.agregarVendedor(vendedor);
+        
+        try {
+            servicio.agregarVendedor(vendedor);
+        } catch (OperacionInvalidaException e) {
+            thrown = true;
+        }
+        
+        assertFalse(thrown);
     }
-
-    /**
+    
+     /**
      * Método de prueba para eliminar un vendedor al sistema
      */
-    @Test
+    @Test(expected=OperacionInvalidaException.class)
     public void testEliminarVendedor() throws Exception
     {
-        servicio.eliminarVendedor(1L);
+        boolean thrown = false;
+        
+        try {
+            servicio.eliminarVendedor(1L);
+        } catch (OperacionInvalidaException e) {
+            thrown = true;
+        }
+        
+        assertFalse(thrown);
     }
-
 }
