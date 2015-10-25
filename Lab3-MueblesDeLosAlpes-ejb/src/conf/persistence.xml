@@ -11,6 +11,7 @@
   <persistence-unit name="Lab3-MueblesDeLosAlpes-ejbDebyPU" transaction-type="JTA">
     <jta-data-source>jdbc/derbyDS</jta-data-source>
     <class>com.losalpes.entities.Vendedores</class>
+    <class>com.losalpes.entities.TarjetaCreditoAlpes</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create-tables"/>

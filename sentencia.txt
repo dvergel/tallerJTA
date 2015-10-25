@@ -1,0 +1,9 @@
+create table tarjeta_credito_alpes(
+identificacion varchar(50),
+nombre_titutlar varchar(200),
+nombre_banco varchar(50),
+cupo numeric,
+fecha_expedicion date,
+fecha_vencimiento date,
+PRIMARY KEY(identificacion)
+);

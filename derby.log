@@ -217,3 +217,5 @@ ERROR 08004: Se ha producido un fallo de autenticación de conexión. Motivo: Aute
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Sat Oct 24 18:38:48 COT 2015 Thread[DRDAConnThread_11,5,main] (DATABASE = LosAlpesDerby), (DRDAID = {14}), Se ha producido un fallo de autenticación de conexión. Motivo: Autenticación no válida..
+----------------------------------------------------------------
+Sat Oct 24 20:34:52 COT 2015: cerrando motor de Derby
